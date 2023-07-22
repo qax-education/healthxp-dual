@@ -1,0 +1,30 @@
+{
+    "create": {
+        "name": "Jeremy Adams",
+        "email": "jeremy@yahoo.com",
+        "age": "28",
+        "weight": "72",
+        "feet_tall": "1.80"
+    },
+    "duplicate": {
+        "name": "Bruce Wayne",
+        "email": "bruce@wayne.com",
+        "age": "28",
+        "weight": "72",
+        "feet_tall": "1.80"
+    },
+    "remove": {
+        "name": "Falcão Delete",
+        "email": "falcao@gmail.com",
+        "age": "28",
+        "weight": "72",
+        "feet_tall": "1.80"
+    },
+    "required": {
+        "name": "",
+        "email": "",
+        "age": "",
+        "weight": "",
+        "feet_tall": ""
+    }
+}
