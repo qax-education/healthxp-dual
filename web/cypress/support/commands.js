@@ -24,7 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })\
 
-
 import users from '../fixtures/users.json'
 
 import loginPage from './pages/LoginPage'

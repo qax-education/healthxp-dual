@@ -1,0 +1,12 @@
+{
+    "create": {
+        "student": {
+            "name": "Fernando Papito",
+            "email": "fernando@yahoo.com",
+            "age": "28",
+            "weight": "72",
+            "feet_tall": "1.80"
+        },
+        "plan": "Health"
+    }
+}

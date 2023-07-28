@@ -1,4 +1,3 @@
-
 import popup from './components/Popup'
 
 class LoginPage {
@@ -28,9 +27,6 @@ class LoginPage {
         this.fill(user)
         this.submit()
     }
-
-
-
 }
 
 export default new LoginPage()

@@ -26,5 +26,26 @@
         "age": "",
         "weight": "",
         "feet_tall": ""
+    },
+    "under_16_years": {
+        "name": "Vera Higgins",
+        "email": "ibpilka@ov.mt",
+        "age": "15",
+        "weight": "65",
+        "feet_tall": "1.69"
+    },
+    "inv_weight": {
+        "name": "Rena McKinney",
+        "email": "putab@jacob.mp",
+        "age": "16",
+        "weight": "-1",
+        "feet_tall": "1.75"
+    },
+    "inv_feet_tall": {
+        "name": "Clarence Morton",
+        "email": "ci@kapawaj.lb",
+        "age": "16",
+        "weight": "70",
+        "feet_tall": "0"
     }
 }
