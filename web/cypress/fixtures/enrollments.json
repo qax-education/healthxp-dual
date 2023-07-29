@@ -7,7 +7,10 @@
             "weight": "72",
             "feet_tall": "1.80"
         },
-        "plan": "Health"
+        "plan": {
+            "id": 1,
+            "name": "Health"
+        }
     },
     "duplicate": {
         "student": {
