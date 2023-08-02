@@ -13,7 +13,4 @@ app.post('/students', db.deleteAndCreateStudent)
 app.delete('/students/:email', db.deleteStudentByEmail)
 app.get('/students/:email', db.selectStudent)
 
-// #DualExperienceDesafio2
-app.post('/enrolls', db.insertEnroll)
-
 app.listen(5000)

@@ -8,7 +8,7 @@ describe('matriculas', ()=> {
     it('deve por matricular um novo aluno', ()=> {
         const dataTest = data.create
 
-        // cy.task('resetStudent', dataTest.student)
+        //cy.task('resetStudent', dataTest.student)
         cy.resetStudent(dataTest.student)
 
         cy.adminLogin()

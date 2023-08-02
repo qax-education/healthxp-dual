@@ -37,9 +37,8 @@ Cypress.Commands.add('adminLogin', () => {
 })
 
 Cypress.Commands.add('createEnroll', (dataTest) => {
-
-    cy.selectStudent(dataTest.student.email)
-        .then(studentResponse => {
+    cy.task('selectStudentId', dataTest.student.email)
+        .then(result => {
             cy.request({
                 url: 'http://localhost:3333/sessions',
                 method: 'POST',
@@ -51,7 +50,7 @@ Cypress.Commands.add('createEnroll', (dataTest) => {
                 cy.log(response.body.token)
 
                 const payload = {
-                    student_id: studentResponse.id,
+                    student_id: result.success.rows[0].id,
                     plan_id: dataTest.plan.id,
                     credit_card: "4242"
                 }
@@ -87,15 +86,5 @@ Cypress.Commands.add('deleteStudent', (studentEmail) => {
         method: 'DELETE',
     }).then(response => {
         expect(response.status).to.eq(204)
-    })
-})
-
-Cypress.Commands.add('selectStudent', (studentEmail) => {
-    cy.request({
-        url: 'http://localhost:5000/students/' + studentEmail,
-        method: 'GET',
-    }).then(response => {
-        expect(response.status).to.eq(200)
-        return response.body
     })
 })
