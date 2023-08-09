@@ -17,5 +17,8 @@
     "@faker-js/faker": "^8.0.2",
     "cypress": "^12.17.0",
     "pg": "^8.11.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }

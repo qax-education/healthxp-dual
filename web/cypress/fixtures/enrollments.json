@@ -9,7 +9,8 @@
         },
         "plan": {
             "id": 1,
-            "name": "Health"
+            "name": "Health",
+            "price": 99.99
         }
     },
     "duplicate": {
@@ -22,7 +23,8 @@
         },
         "plan": {
             "id": 1,
-            "name": "Health"
+            "name": "Health",
+            "price": 99.99
         }
     }
 }
