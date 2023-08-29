@@ -1,0 +1,17 @@
+{
+    "create": {
+        "student": {
+            "name": "Papito Fernando",
+            "email": "papito@aol.com",
+            "age": "28",
+            "weight": "72",
+            "feet_tall": "1.80"
+        },
+        "plan": {
+            "id": 2,
+            "name": "Premium",
+            "price": 99.99
+        },
+        "question": "Qual o melhor termogêncico?"
+    }
+}
