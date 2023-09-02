@@ -1,0 +1,16 @@
+{
+  "name": "mobile",
+  "version": "1.0.0",
+  "description": "Projeto de automação para android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernando Papito",
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^1.22.3",
+    "codeceptjs": "^3.5.4",
+    "webdriverio": "^8.16.0"
+  }
+}
