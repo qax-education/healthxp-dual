@@ -11,7 +11,7 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  tests: './*_test.js',
+  tests: './e2e/*_test.js',
   output: './output',
   helpers: {
     Appium: {
@@ -21,9 +21,9 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js',
+    I: './support/steps_file.js',
 
-    loginScreen: "./screens/login.js",
+    loginScreen: "./support/screens/login.js",
   },
   name: 'mobile'
 }
