@@ -1,28 +1,37 @@
 import data from '../fixtures/questions.json'
 
-describe('receber perguntas', ()=> {
+import studentPage from '../support/pages/StudentPage'
 
-    // Entregar o desafio pelo Canal do Discord no dia 31 de agosto até as 16h
-    // Além dos testes colocar a Url da API na porta 3333 no arquivo .env
+describe('receber perguntas', () => {
 
-    it('deve poder receber uma notificação com uma pergunta do aluno', ()=> {
+    it('deve poder receber uma notificação com uma pergunta do aluno', () => {
 
-        const dataTest = data.create
+        const dataTest = data.notification
 
         cy.resetStudent(dataTest.student)
         cy.createEnroll(dataTest)
         cy.createQuestion(dataTest.question)
 
-        // Desafio somente para quem participou da live
-        // Automatizar a validaçao da notificação do sininho na página do administrador da Academia
+        cy.adminLogin()
 
+        studentPage.navbar.openNotifications()
+        studentPage.notifications.haveQuestion(dataTest.question)
     })
 
-    // it('deve poder responder uma pergunta de alunos', ()=> {
+    it('deve poder responder uma pergunta de alunos', ()=> {
+        const dataTest = data.prof_answer
 
-        // Construir uma nova massa de testes que possua pergunta e resposta
-        // Em seguida, automatizar o fluxo de responsta da pergunta que foi recebida
+        cy.resetStudent(dataTest.student)
+        cy.createEnroll(dataTest)
+        cy.createQuestion(dataTest.question)
 
-    // })
+        cy.adminLogin()
+
+        studentPage.navbar.openNotifications()
+        studentPage.notifications.openQuestion(dataTest.question)
+        studentPage.notifications.sendAnswer(dataTest.answer)
+
+        studentPage.popup.haveText('Resposta enviada com sucesso')
+    })
 
 })
