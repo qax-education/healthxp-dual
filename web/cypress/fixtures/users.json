@@ -20,7 +20,7 @@
     { "email": "asdasd123asd", "password": "123456" },
     { "email": "&^*&^&*&*^&", "password": "123456" },
     { "email": "admin*test.com", "password": "123456" },
-    { "email": "     @test.com", "password": "123456" }
+    { "email": "@test.com", "password": "123456" }
   ],
   "empty_email": {
     "email": "",

@@ -79,6 +79,7 @@ module.exports = defineConfig({
       })
 
     },
+    projectId: "asvm5x",
     baseUrl: process.env.BASE_URL,
     env: {
       apiHelper: process.env.API_HELPER

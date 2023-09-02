@@ -18,11 +18,11 @@ describe('receber perguntas', ()=> {
 
     })
 
-    it('deve poder responder uma pergunta de alunos', ()=> {
+    // it('deve poder responder uma pergunta de alunos', ()=> {
 
         // Construir uma nova massa de testes que possua pergunta e resposta
         // Em seguida, automatizar o fluxo de responsta da pergunta que foi recebida
 
-    })
+    // })
 
 })
