@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const ShortUniqueId = require('short-unique-id')
+
 const { Pool } = require('pg')
 
 const pool = new Pool({
@@ -61,17 +63,20 @@ const insertEnrollByEmail = (req, res) => {
 
   const { email, plan_id, price } = req.body
 
+  const uid = new ShortUniqueId({ length: 6 });
+
   const query = `
     INSERT INTO enrollments (enrollment_code, student_id, plan_id, credit_card, status, price)
     SELECT
-    'XPTO123' as enrollment_code,
+    '${uid.rnd().toUpperCase()}' as enrollment_code,
     id as student_id,
     $2 as plan_id,
     '4242' as credit_card,
     true as status,
     $3 as price
     FROM students
-    WHERE email = $1;
+    WHERE email = $1
+    RETURNING enrollment_code;
   `
 
   const values = [email, plan_id, price]
@@ -80,7 +85,7 @@ const insertEnrollByEmail = (req, res) => {
     if (error) {
       return res.status(500).json(error)
     }
-    res.status(201).end()
+    res.status(201).json({enrollment_code: result.rows[0].enrollment_code})
   })
 }
 

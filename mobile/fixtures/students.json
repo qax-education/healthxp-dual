@@ -1,0 +1,30 @@
+{
+    "success_login": {
+        "student": {
+            "name": "Fernando Silva Sauro",
+            "email": "silva_sauro@yahoo.com",
+            "age": "28",
+            "weight": "72",
+            "feet_tall": "1.80"
+        },
+        "plan": {
+            "id": 2,
+            "name": "Premium",
+            "price": 99.99
+        }
+    },
+    "not_login": {
+        "student": {
+            "name": "Fernando Santarem",
+            "email": "fesantarem@hotmail.com",
+            "age": "28",
+            "weight": "72",
+            "feet_tall": "1.80"
+        },
+        "plan": {
+            "id": 1,
+            "name": "Health",
+            "price": 99.99
+        }
+    }
+}

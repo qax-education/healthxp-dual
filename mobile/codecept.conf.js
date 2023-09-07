@@ -18,12 +18,18 @@ exports.config = {
       app: 'C:\\QAx\\projects\\healthxp-dual\\mobile\\app\\hxp-beta2.apk',
       platform: 'Android',
       device: 'emulator'
+    },
+    REST: {
+      endpoint: 'http://localhost:5000'
+    },
+    JSONResponse: {
+      requestHelper: 'REST'
     }
   },
   include: {
     I: './support/steps_file.js',
-
-    loginScreen: "./support/screens/login.js",
+    login: "./support/screens/login.js",
+    account: "./support/screens/account.js"
   },
   name: 'mobile'
 }

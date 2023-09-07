@@ -1,6 +1,6 @@
 const { I } = inject();
 
-class loginScreen {
+class login {
   constructor() {
     //insert your locators
     // this.button = '#button'
@@ -9,7 +9,7 @@ class loginScreen {
   with(enrollment_code) {
     I.seeAppIsInstalled('com.papitorocks.healthxp')
 
-    I.fillField('#ipAddress', '192.168.68.116')
+    I.fillField('#ipAddress', '192.168.68.113')
     I.fillField('#enrollment_code', enrollment_code)
     I.click('#btnLogin')
   }
@@ -17,4 +17,4 @@ class loginScreen {
 }
 
 // For inheritance
-module.exports = new loginScreen();
+module.exports = new login();

@@ -1,24 +1,37 @@
+const students = require('../fixtures/students.json')
+
+
 Feature('login');
 
-Scenario('deve logar com sucesso',  ({ I, loginScreen }) => {
-    loginScreen.with('QHARBV')
-    I.see('Minha conta')
+Scenario('deve logar com sucesso', async ({ I, login, account }) => {
+
+    const dataTest = students.success_login;
+
+    I.resetStudent(dataTest.student)
+    const enrollment_code =  await I.createEnroll(dataTest)
+
+    login.with(enrollment_code)
+    account.userLoggedIn()
 });
 
-Scenario('não deve logar com matrícula inexistente',  ({ I, loginScreen }) => {
-    loginScreen.with('ABC123')
+Scenario('não deve logar com matrícula inexistente', ({ I, login }) => {
+    login.with('ABC123')
 
-    I.see(
-        'Acesso não autorizado! Entre em contato com a central de atendimento.',
-        '#android:id/message'
+    I.popHaveText(
+        'Acesso não autorizado! Entre em contato com a central de atendimento.'
     )
 });
 
-Scenario('não deve logar com o plano health',  ({ I, loginScreen }) => {
-    loginScreen.with('MMDBKN')
+Scenario('não deve logar com o plano health', async ({ I, login }) => {
 
-    I.see(
-        'Seu plano não possui permissão para uso do App! Entre em contato com a central de atendimento.',
-        '#android:id/message'
+    const dataTest = students.not_login;
+
+    I.resetStudent(dataTest.student)
+    const enrollment_code =  await I.createEnroll(dataTest)
+
+    login.with(enrollment_code)
+
+    I.popHaveText(
+        'Seu plano não possui permissão para uso do App! Entre em contato com a central de atendimento.'
     )
 });
