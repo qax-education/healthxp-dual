@@ -13,6 +13,13 @@ setCommonPlugins();
 exports.config = {
   tests: './e2e/*_test.js',
   output: './output',
+  plugins: {
+    'tesults': {
+      'require': 'codeceptjs-tesults',
+      'enabled': true,
+      'target': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjJmZTMyZjVhLTMxZDQtNDA4Zi1iM2U5LTI2NGM5ODViMDlmMi0xNjk0MTE4OTYzNTg4IiwiZXhwIjo0MTAyNDQ0ODAwMDAwLCJ2ZXIiOiIwIiwic2VzIjoiNzU2YjEyOTctZDE3ZS00OGJlLThiMzEtMDQxOTY3YjAzNTNmIiwidHlwZSI6InQifQ.Afqc3ElvszKWBCNmHyL-fRYlSbWhWMKngMHuxyD1084'
+    }
+  },
   helpers: {
     Appium: {
       app: 'C:\\QAx\\projects\\healthxp-dual\\mobile\\app\\hxp-beta2.apk',
@@ -29,7 +36,8 @@ exports.config = {
   include: {
     I: './support/steps_file.js',
     login: "./support/screens/login.js",
-    account: "./support/screens/account.js"
+    account: "./support/screens/account.js",
+    helpOrder: "./support/screens/help-orders.js"
   },
   name: 'mobile'
 }
